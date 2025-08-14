@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Asilhane Tesbih - Yakında Hizmetinizde</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --light-cyan: #48d1cc;
+            --dark-gray: #333333;
+        }
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            background-color: #000;
+            color: var(--light-cyan);
+            perspective: 1500px; /* 3D derinliği artırıldı */
+        }
+        .container {
+            max-width: 800px;
+            padding: 50px;
+            transform-style: preserve-3d;
+            transform: rotateX(0deg) rotateY(0deg); /* Başlangıç pozisyonu */
+            animation: wallEntrance 2s ease-out forwards;
+        }
+        @keyframes wallEntrance {
+            0% { transform: rotateY(180deg) scale(0.5); opacity: 0; } /* Kartın tam arkadan başlaması */
+            100% { transform: rotateY(0deg) scale(1); opacity: 1; } /* Kartın tam öne dönmesi */
+        }
+        .wall-surface {
+            background-color: #555;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 
+                -20px 20px 50px rgba(0, 0, 0, 0.5),
+                inset 0 0 10px rgba(0, 0, 0, 0.3);
+            transform: translateZ(-50px);
+        }
+        h1 {
+            color: #fff;
+            font-size: 60px;
+            letter-spacing: 5px;
+            text-shadow: 
+                -2px -2px 0 #000, 
+                2px 2px 0 #000, 
+                4px 4px 5px rgba(0, 0, 0, 0.5);
+            transform: translateZ(50px);
+            animation: textRise 1.5s ease-out forwards;
+        }
+        h2 {
+            font-size: 28px;
+            line-height: 1.6;
+            margin-top: 30px;
+            color: var(--light-cyan);
+            text-shadow: 
+                1px 1px 0 #000, 
+                2px 2px 5px rgba(255, 255, 255, 0.3);
+            opacity: 0;
+            transform: translateZ(20px);
+            animation: textAppear 1.5s ease-out forwards;
+        }
+        h2:nth-of-type(1) {
+            animation-delay: 1s;
+        }
+        h2:nth-of-type(2) {
+            animation-delay: 1.5s;
+        }
+        @keyframes textRise {
+            0% { transform: translateZ(-200px); opacity: 0; }
+            100% { transform: translateZ(50px); opacity: 1; }
+        }
+        @keyframes textAppear {
+            0% { transform: translateZ(-50px); opacity: 0; }
+            100% { transform: translateZ(20px); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wall-surface">
+            <h1>Asilhane Tesbih</h1>
+            <h2>Sayın müşterilerimiz, e-ticaret platformumuz en yakın zamanda sizler için hizmete girecektir. Bizleri tercih edip takip ettiğiniz için teşekkür ederiz.</h2>
+            <h2>~Asilhane Tesbih, anahtarlık, bujiteri~</h2>
+        </div>
+    </div>
+</body>
+</html>
